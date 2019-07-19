@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="RadTabs.cpp" />
+    <ClCompile Include="WinEvent.cpp" />
+    <ClCompile Include="DragDrop.cpp" />
+    <ClCompile Include="TabHost.cpp" />
+    <ClCompile Include="TrayIcon.cpp" />
+    <ClCompile Include="IconManager.cpp" />
+    <ClCompile Include="TokenInformation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WinEvent.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="DragDrop.h" />
+    <ClInclude Include="TabHost.h" />
+    <ClInclude Include="TrayIcon.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="IconManager.h" />
+    <ClInclude Include="TokenInformation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RadTabs.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="manifest.xml" />
+  </ItemGroup>
+</Project>
