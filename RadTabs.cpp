@@ -84,8 +84,8 @@ void LoadSettings()
     if (StrEmpty(WndTypeStr))
     {
         StrCpy(WndTypeStr,
-            TEXT("|ConsoleWindowClass\0")
-            TEXT("|Notepad\0"));
+            TEXT("*|ConsoleWindowClass\0")
+            TEXT("*|Notepad\0"));
     }
 
     int i = 0;
@@ -181,6 +181,8 @@ BOOL MainWindowOnCreate(HWND hWnd, LPCREATESTRUCT lpCreateStruct)
     TrayIconCreate(hWnd, GetWindowIcon(hWnd), TEXT("RadTabs"));
     TrayIconSetMenu(hWnd, LoadMenu(hInstance, MAKEINTRESOURCE(IDR_MAIN)));
 
+    RegisterHotKey(hWnd, HK_TAB, MOD_CONTROL | MOD_ALT, TEXT('T'));
+
     EnumWindows(InitTabWindows, reinterpret_cast<LPARAM>(hInstance));
 
     return TRUE;// FORWARD_WM_CREATE(hWnd, lpCreateStruct, DefWindowProc);
@@ -262,7 +264,6 @@ void MainWindowOnWinEvent(HWND hWnd, DWORD event, HWND hOther)
                 UnregisterHotKey(hWnd, MAKELONG(HK_SWITCH, i));
             UnregisterHotKey(hWnd, HK_PREV);
             UnregisterHotKey(hWnd, HK_NEXT);
-            UnregisterHotKey(hWnd, HK_TAB);
         }
         else
         {
@@ -273,7 +274,6 @@ void MainWindowOnWinEvent(HWND hWnd, DWORD event, HWND hOther)
             RegisterHotKey(hWnd, HK_NEXT, MOD_CONTROL | MOD_ALT, VK_RIGHT);
             RegisterHotKey(hWnd, HK_PREV, MOD_CONTROL | MOD_SHIFT, VK_TAB);
             RegisterHotKey(hWnd, HK_NEXT, MOD_CONTROL, VK_TAB);
-            RegisterHotKey(hWnd, HK_TAB, MOD_CONTROL | MOD_ALT, TEXT('T'));
         }
     }
     break;
