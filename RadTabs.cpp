@@ -15,8 +15,6 @@
 #include <cstdio>
 #include <cassert>
 
-// TODO Make single instance
-
 bool CheckUIAccess(const DWORD procId)
 {
     static bool thishas = HasUIAccess((DWORD) 0);
@@ -106,6 +104,9 @@ void LoadSettings()
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE, LPTSTR pCmdLine, int nCmdShow)
 {
+    if (FindWindow(TEXT("RadTabsMainClass"), nullptr) != NULL)
+        return EXIT_SUCCESS;
+
     INITCOMMONCONTROLSEX icex = {};
     icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
     icex.dwICC = ICC_TAB_CLASSES; // | ICC_STANDARD_CLASSES;
