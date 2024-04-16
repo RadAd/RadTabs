@@ -1,6 +1,5 @@
 <!-- ![Icon](RadTabsW.ico) RadTabs -->
-<img src="RadTabsW.ico" width=32/> RadTabs
-==========
+# <img src="RadTabsW.ico#gh-dark-mode-only" width=32/><img src="RadTabsB.ico#gh-light-mode-only" width=32/> RadTabs
 
 Tabs for any window
 
